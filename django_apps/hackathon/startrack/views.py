@@ -13,8 +13,7 @@ def get_sentiments(x):
         'comprehend', 
         region_name='us-west-2',
         aws_access_key_id = 'AKIA5ZXJKRTQJFYRNUOY',
-        aws_secret_access_key = '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'
-        
+        aws_secret_access_key = 'UMpMJJgWZsuPpErcZ/0H08DgSY5GQE6YeLpa3wei'  
     )
     response = client.detect_sentiment(
         Text=x,
