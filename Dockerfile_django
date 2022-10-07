@@ -1,0 +1,11 @@
+FROM python:3.7.9 as django-builder
+
+COPY requirements.txt /requirements.txt
+COPY django-load.sh /django-load.sh 
+
+RUN apt-get update 
+RUN apt-get install libpq-dev jq freetds-dev -y
+RUN python -m pip install --upgrade pip
+RUN pip3 install -r /requirements.txt
+
+EXPOSE 8800

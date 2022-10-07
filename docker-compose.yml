@@ -1,0 +1,23 @@
+version: '3.2'
+
+services: 
+  vm-django-services:
+    build: 
+      context: .
+      dockerfile: Dockerfile_django
+    restart: on-failure
+    env_file: .env
+    entrypoint: sh ./django-load.sh
+    volumes: 
+      - ./django_apps:/home/django
+    ports:
+      - 8800:8800
+
+  vm-fastapi-services:
+    build: 
+      context: .
+      dockerfile: Dockerfile_fastapi
+    restart: on-failure
+    env_file: .env
+    ports:
+      - 8880:8880
