@@ -11,9 +11,7 @@ from skfuzzy import control as ctrl
 # def get_sentiments(x):
 #     client = boto3.client(
 #         'comprehend', 
-#         region_name='us-west-2',
-#         aws_access_key_id = 'AKIA5ZXJKRTQJFYRNUOY',
-#         aws_secret_access_key = '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'  
+#         region_name='us-west-2'
 #     )
 #     response = client.detect_sentiment(
 #         Text=x,
