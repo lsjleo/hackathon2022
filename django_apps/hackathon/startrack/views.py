@@ -8,18 +8,18 @@ from skfuzzy import control as ctrl
 
 # Create your views here.
 
-def get_sentiments(x):
-    client = boto3.client(
-        'comprehend', 
-        region_name='us-west-2',
-        aws_access_key_id = 'AKIA5ZXJKRTQJFYRNUOY',
-        aws_secret_access_key = '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'  
-    )
-    response = client.detect_sentiment(
-        Text=x,
-        LanguageCode='pt'
-    )
-    return response['SentimentScore']
+# def get_sentiments(x):
+#     client = boto3.client(
+#         'comprehend', 
+#         region_name='us-west-2',
+#         aws_access_key_id = 'AKIA5ZXJKRTQJFYRNUOY',
+#         aws_secret_access_key = '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'  
+#     )
+#     response = client.detect_sentiment(
+#         Text=x,
+#         LanguageCode='pt'
+#     )
+#     return response['SentimentScore']
 
 def index(request):
     obj = {
@@ -51,7 +51,7 @@ def ia(request):
         right_on='contratante_id'
     )
     
-    df['sentimentos'] = df['consideracoes'].apply(get_sentiments)
+    # df['sentimentos'] = df['consideracoes'].apply(get_sentiments)
     
     if 'pkid' in request.GET.keys():
         df = df[df['contratante_id'].map(str)==request.GET['pkid'][0]]
