@@ -16,8 +16,10 @@ django_tables2
 django-filter
 python-dotenv
 python-jose
+scikit-fuzzy
 plotly
 pandas
+matplotlib
 tablib
 boto3
 wheel

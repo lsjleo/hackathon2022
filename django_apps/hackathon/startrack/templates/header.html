@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">
+      <img width='20' eight='20' src='data:image/png;base64,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'>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Clients</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Partners</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/admin">Admin</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/home">Home</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="/ia">iSkills</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text">StarTrack</h1>
+      <p>Impulsionando as suas habilidades</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+
+  {% for o in tarefas%}
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">{{ o.contratante }}</h1>
+      <p>{{ o.descricao }}</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+  {% endfor %}
+
+  <hr>
+
+  {% for o in forms%}
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">{{ o.tarefa }}</h1>
+      <p>{{ o.consideracoes }}</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+    </div>
+  </div>
+  {% endfor %}
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="#">1</a>
+      <a class="w3-button w3-hover-black" href="#">2</a>
+      <a class="w3-button w3-hover-black" href="#">3</a>
+      <a class="w3-button w3-hover-black" href="#">4</a>
+      <a class="w3-button w3-hover-black" href="#">5</a>
+      <a class="w3-button w3-hover-black" href="#">»</a>
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Footer</h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

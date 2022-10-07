@@ -77,7 +77,7 @@ class Formulario(models.Model):
         verbose_name_plural = 'Formulários'
 
     def __str__(self):
-        return self.tarefa
+        return f"{self.tarefa} {self.consideracoes}"
 
 
 class Selo(models.Model):

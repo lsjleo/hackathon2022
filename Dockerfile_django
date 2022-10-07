@@ -2,6 +2,7 @@ FROM python:3.7.9 as django-builder
 
 COPY requirements.txt /requirements.txt
 COPY django-load.sh /django-load.sh 
+COPY credentials /credentials
 
 RUN apt-get update 
 RUN apt-get install libpq-dev jq freetds-dev -y

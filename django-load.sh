@@ -19,6 +19,6 @@ fi
 # echo 'yes' | python manage.py collectstatic
 python3 manage.py makemigrations
 python3 manage.py migrate
-python3 manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'startrack@hackathon.com', 'startrack')"
+# python3 manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'startrack@hackathon.com', 'startrack')"
 #python3 manage.py inspectdb > modeltemp.py
 python3 manage.py runserver 0.0.0.0:8800
