@@ -59,9 +59,9 @@ def ia(request):
        
     df2 = df.groupby('contratante_id').agg({'avaliacao':'mean','agilidade':'mean','funcionalidade':'mean'}).reset_index()
      
-    a = ctrl.Antecedent(np.arange(0, 11, 1), 'avaliacao')
-    b = ctrl.Antecedent(np.arange(0, 11, 1), 'agilidade')
-    c = ctrl.Antecedent(np.arange(0, 11, 1), 'funcionalidade')
+    a = ctrl.Antecedent(np.arange(0, 5, 1), 'avaliacao')
+    b = ctrl.Antecedent(np.arange(0, 5, 1), 'agilidade')
+    c = ctrl.Antecedent(np.arange(0, 5, 1), 'funcionalidade')
     skill = ctrl.Consequent(np.arange(0, 26, 1), 'skill')
 
     # Auto-membership function population is possible with .automf(3, 5, or 7)
@@ -88,10 +88,18 @@ def ia(request):
 
     # Crunch the numbers
     tipping.compute()
-
+    fuzzyout = (tipping.output['skill'] / 25) * 100
+    
+    if fuzzyout < 33:
+        cat = 'JUNIOR'
+    elif fuzzyout >= 33 and fuzzyout < 66:
+        cat = 'PLENO'
+    else:
+        cat = 'SENIOR'
+    
     obj = {
         'form':df.to_dict(),
         'pessoa':df2.to_dict(),
-        'skill':tipping.output['skill']
+        'skill':{'fuzzyout':fuzzyout,'result':cat},
     }
     return render(request, 'ia.html', obj)
