@@ -18,3 +18,7 @@ class FormularioAdmin(admin.ModelAdmin):
 class MensagemAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Mensagem._meta.fields if field.name not in ('id' )]
     
+@admin.register(Selo)
+class SeloAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in Selo._meta.fields if field.name not in ('id' )]
+    

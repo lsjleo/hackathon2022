@@ -78,3 +78,21 @@ class Formulario(models.Model):
 
     def __str__(self):
         return self.tarefa
+
+
+class Selo(models.Model):
+    
+    id = models.IntegerField(primary_key=True)
+    nome = models.CharField(max_length=50)
+    aplicante = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
+    area_de_conhecimento = models.CharField(max_length=250)
+    nivel = models.IntegerField(choices=[(x,x) for x in (1,2,3,4,5)], default=None)
+    
+    class Meta:
+        
+        verbose_name = 'Selo'
+        verbose_name_plural = 'Selos'
+
+    def __str__(self):
+        return self.aplicante
+
